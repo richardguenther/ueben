@@ -1,2 +1,4 @@
 // esbuild test
-const fn = obj => { return obj.x }
+const fn = (obj) => {
+	return obj.x;
+};

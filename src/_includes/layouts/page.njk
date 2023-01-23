@@ -6,11 +6,18 @@
     <title>{{title}}</title>
 
     <link rel="stylesheet" href="/assets/compiled.css"/>
+        {% if scripts %}
+      <script defer src="/assets/{{scripts}}"></script>
+    {% endif %}
     <script defer src="/assets/compiled.js"></script>
 
-    {% if scripts %}
+
+
+
+
+      {% if scriptsint %}
       <script type="module">
-        {% set js %}{% include scripts %}{% endset %}
+        {% set js %}{% include scriptsint %}{% endset %}
         {{ js | jsmin | safe }}
       </script>
     {% endif %}

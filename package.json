@@ -8,7 +8,7 @@
     "serve:eleventy": "eleventy --serve --incremental",
     "build:eleventy": "eleventy",
     "dev": "cross-env NODE_ENV=development npm-run-all clean build:postcss -p serve:*",
-    "build": "cross-env NODE_ENV=production  npm-run-all -s build:*"
+    "build": "rm -rf _site && cross-env NODE_ENV=production  npm-run-all -s build:*"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.0-beta.1",

@@ -323,6 +323,11 @@ button:active {
   width: fit-content;
 }
 
+.bg-red-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+}
+
 .bg-slate-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
@@ -340,6 +345,11 @@ button:active {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -350,12 +360,17 @@ button:active {
   line-height: 1.75rem;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .font-black {
   font-weight: 900;
 }
 
-.font-bold {
-  font-weight: 700;
+.text-blue-800 {
+  --tw-text-opacity: 1;
+  color: rgb(30 64 175 / var(--tw-text-opacity));
 }
 
 .text-emerald-500 {
@@ -368,12 +383,12 @@ button:active {
   color: rgb(110 231 183 / var(--tw-text-opacity));
 }
 
-.text-green-500 {
+.text-violet-800 {
   --tw-text-opacity: 1;
-  color: rgb(34 197 94 / var(--tw-text-opacity));
+  color: rgb(91 33 182 / var(--tw-text-opacity));
 }
 
-.text-red-500 {
+.text-fuchsia-400 {
   --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
+  color: rgb(232 121 249 / var(--tw-text-opacity));
 }

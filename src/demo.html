@@ -1,27 +1,28 @@
 ---
 layout: layouts/page.njk
-permalink: /
-title: Home
+permalink: demo/
+title: Demo
 author: Me
 
 scripts: assets-inline/demo.js
-styles:  assets-inline/demo.css
+styles: assets-inline/demo.css
 ---
-<h1 
-  class="my-8 font-serif text-3xl text-center text-emerald-500 bg-slate-700" 
-  x-data="{ message: '{{ author }} ❤️s Alpine' }" 
-  x-text="message"
+
+<h1
+	class="my-8 font-serif text-3xl text-center text-emerald-500 bg-slate-700"
+	x-data="{ message: '{{ author }} ❤️s Alpine' }"
+	x-text="message"
 >
-  Alpine should replace this text 🤞
+	Alpine should replace this text 🤞
 </h1>
 
-<div 
-  class="mx-auto w-fit"
-  x-data="{ count: 0 }" 
->
-  <button @click="count--">👎</button>
-  <span class="mx-4 font-mono text-xl font-black text-emerald-300" x-text="count"></span>
-  <button @click="count++">👍</button>
+<div class="mx-auto w-fit" x-data="{ count: 0 }">
+	<button @click="count--">👎</button>
+	<span
+		class="mx-4 font-mono text-xl font-black text-emerald-300"
+		x-text="count"
+	></span>
+	<button @click="count++">👍</button>
 </div>
 
-<h2 class="text-3xl font-bold text-center text-red-500">Guten Tag</h2>
+<h2 class="text-3xl font-bold text-center text-violet-800">Raben Tag</h2>
