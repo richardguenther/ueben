@@ -3,9 +3,14 @@ layout: layouts/page.njk
 title: Traversy Alpine
 
 styles: assets-inline/demo.css
+scripts: traversy.js
 ---
 
 <h1 class="text-2xl font-bold text-center text-fuchsia-400">Traversy Alpine</h1>
+
+
+<p>Guten Tag</p>
+
 
 <div
 	x-data="{message: 'Guten Tag und Hallo meine Damen und Herren', open: false}"
@@ -77,7 +82,10 @@ styles: assets-inline/demo.css
 			<span x-text="post.author"></span>
 		</div>
 	</template>
+
 </div>
+
+<div class="m-6"></div>
 
 <div x-data>
 	<p x-ref="ersterParagraph">Guten Tag</p>
@@ -95,4 +103,11 @@ styles: assets-inline/demo.css
 >
 	<button class="p-4" @click="$dispatch('notify')"></button>
 	<button class="p-6" @click="$dispatch('logging')"></button>
+</div>
+
+
+<div x-data="{ name: 'Caleb' }">
+    <div x-data="{ greeting: 'Hello' }">
+        <button @click="sayHello($data)">Say Hello</button>
+    </div>
 </div>
