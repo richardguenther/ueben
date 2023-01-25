@@ -1,0 +1,98 @@
+---
+layout: layouts/page.njk
+title: Traversy Alpine
+
+styles: assets-inline/demo.css
+---
+
+<h1 class="text-2xl font-bold text-center text-fuchsia-400">Traversy Alpine</h1>
+
+<div
+	x-data="{message: 'Guten Tag und Hallo meine Damen und Herren', open: false}"
+>
+	<button
+		x-bind:class="open ? 'bg-green-200' : 'bg-red-200'"
+		x-effect="console.log(open)"
+		@click="open = !open"
+	></button>
+	<h2
+		class="h-20 bg-slate-100"
+		x-transition
+		x-cloak
+		x-show="open"
+		x-text="message"
+		x-init="console.log('offen')"
+	>
+		Hallo
+	</h2>
+</div>
+
+<button
+	x-data="{aussage : false}"
+	x-bind:class="aussage ? 'bg-green-200' : 'bg-red-200'"
+	@click="aussage = !aussage"
+	class="p-2 rounded-xl"
+></button>
+<div x-data="{search: 'hallo'}">
+	<input
+		type="text"
+		x-model="search"
+		class="w-full p-2 mt-6 mb-2 border"
+		placeholder="Suche mal was..."
+	/>
+	<span class="font-bold">Es wird gesucht nach:</span
+	><span x-text="search">Huu</span>
+</div>
+
+<div
+	x-data="{ 
+    open: false,
+    name: 'Richard',
+    search: '',
+    posts: [
+      {title: 'Post One', author: 'richard'},
+      {title: 'Zwei', author: 'lisa'},
+      {title: 'drei', author: 'sophia'},
+      {title: 'vier', author: 'jurek'}
+    ]
+}"
+>
+	<p>Hier werden Posts gleich ausgeschrieben</p>
+
+	<button
+		class="p-4 rounded-xl"
+		@click="posts.push({title: 'neuerPost', author: 'Mara'})"
+		x-effect="console.log(posts)"
+	></button>
+	<template x-if="open">
+		<p>Hallo Hallo</p>
+	</template>
+
+	<h3 class="mt-6 mb-3 text-2xl font-bold">Posts</h3>
+	<template x-for="post in posts">
+		<div>
+			das hier ist:
+			<span x-text="post.title"></span>
+			von:
+			<span x-text="post.author"></span>
+		</div>
+	</template>
+</div>
+
+<div x-data>
+	<p x-ref="ersterParagraph">Guten Tag</p>
+	<button
+		class="p-4"
+		@click="$refs.ersterParagraph.innerText='Geändert'"
+	></button>
+	<button class="p-4" @click="$el.innerText='Geändert'"></button>
+</div>
+
+<div
+	x-data
+	@notify="alert('Notification!')"
+	@logging="console.log('eingeloggt')"
+>
+	<button class="p-4" @click="$dispatch('notify')"></button>
+	<button class="p-6" @click="$dispatch('logging')"></button>
+</div>
